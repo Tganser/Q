@@ -15,6 +15,9 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
+import InputPage from '../InputPage/InputPage';
+import QueryPage from '../QueryPage/QueryPage';
+
 
 import './App.css';
 
@@ -53,6 +56,16 @@ class App extends Component {
               exact
               path="/info"
               component={InfoPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/input"
+              component={InputPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/query"
+              component={QueryPage}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

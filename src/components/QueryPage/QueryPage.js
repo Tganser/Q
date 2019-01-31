@@ -5,16 +5,13 @@ import React from 'react';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is, so it doesn't need 'connect()'
 
-const AboutPage = () => (
+const QueryPage = () => (
   <div>
-    <div>
-      <p>
-        This about page is public.
-        How to log in, how to sign up?
-        Contact Info?
-      </p>
-    </div>
+    <p>
+      Query data here:
+
+    </p>
   </div>
 );
 
-export default AboutPage;
+export default QueryPage;

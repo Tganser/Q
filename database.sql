@@ -10,7 +10,7 @@ CREATE TABLE "client_organization" (
   "shortName" VARCHAR(100),
   "fullName" VARCHAR(200),
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 CREATE TABLE "client_contact" (
   "id" SERIAL PRIMARY KEY,
@@ -20,13 +20,13 @@ CREATE TABLE "client_contact" (
   "phone" VARCHAR(20),
   "email" VARCHAR(50),
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 CREATE TABLE "job" (
   "id" SERIAL PRIMARY KEY,
   "job_name" VARCHAR(100),
   "client_org_id" INT REFERENCES client_organization(id) ON DELETE CASCADE,
-  "client_contact_id" INT REFERENCES client_contacts(id) ON DELETE CASCADE,
+  "client_contact_id" INT REFERENCES client_contact(id) ON DELETE CASCADE,
   "unitAcres" FLOAT,
   "estimatedHours" FLOAT,
   "typeOfWork" VARCHAR(80),
@@ -35,11 +35,11 @@ CREATE TABLE "job" (
   "scopeDescription" VARCHAR(200),
   "contractType" VARCHAR(80),
   "contractAmount" VARCHAR(80),
-  "additionalNotes"
-  "purchaseOrder"
-  "costs"
+  "additionalNotes" VARCHAR(200),
+  "purchaseOrder" VARCHAR(100),
+  "costs" VARCHAR(200),
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 CREATE TABLE "site" (
   "id" SERIAL PRIMARY KEY,
@@ -52,7 +52,7 @@ CREATE TABLE "site" (
   "link" VARCHAR(100),
   "siteNotes" VARCHAR(1000),
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 CREATE TABLE "management_unit" (
   "id" SERIAL PRIMARY KEY,
@@ -66,7 +66,7 @@ CREATE TABLE "management_unit" (
   "other" FLOAT,
   "description" VARCHAR(1000),
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 CREATE TABLE "task" (
   "id" SERIAL PRIMARY KEY,
@@ -74,4 +74,4 @@ CREATE TABLE "task" (
   "management_unit_id" INT REFERENCES management_unit(id) ON DELETE CASCADE,
   "description" VARCHAR(200),
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
