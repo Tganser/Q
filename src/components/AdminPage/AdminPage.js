@@ -7,8 +7,10 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import DeleteIcon from '@material-ui/icons/Delete'
-import EditIcon from '@material-ui/icons/Edit'
+import DeleteIcon from '@material-ui/icons/DeleteOutlined'
+import EditIcon from '@material-ui/icons/EditOutlined'
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 
 // This is one of our simplest components
@@ -30,14 +32,20 @@ makeCall = () => {
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
+          <div className={classes.topArea}>
          <Typography variant="h5" component="h3">
            Site Administrators
           </Typography>
+          <Fab aria-label="Add" className={classes.fab}>
+            <AddIcon />
+          </Fab>
+        </div>
+          <div className={classes.cardsArea}>
           <Card className={classes.adminCard}>
             <CardContent>
               Jim Ellison
               <EditIcon className={classes.edit}/>
-              <DeleteIcon className={classes.delete}/>
+              <DeleteIcon color= "disabled" className={classes.delete}/>
             </CardContent>
           </Card>
           <Card className={classes.adminCard}>
@@ -54,6 +62,7 @@ makeCall = () => {
               <DeleteIcon className={classes.delete}/>
             </CardContent>
           </Card>
+        </div>
        </Paper>
       </div>
     );
@@ -65,8 +74,8 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    margin: 12,
-    padding: 12,
+    margin: 20,
+    padding: 20,
   },
   adminCard: {
     width: 220,
@@ -79,6 +88,17 @@ const styles = theme => ({
   },
   delete: {
     padding: 5,
+  },
+  fab : {
+    color: '#526c5f',
+    marginLeft: 1010,
+  },
+  cardsArea: {
+    display: 'flex',
+    marginTop: 10,
+  },
+  topArea: {
+    display: 'flex',
   }
 });
 
