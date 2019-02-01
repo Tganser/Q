@@ -9,12 +9,13 @@ import {
 import {connect} from 'react-redux';
 
 import Nav from '../Nav/Nav';
+import topAppBar from '../Nav/topAppBar.js';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import AdminPage from '../AdminPage/AdminPage';
 import InputPage from '../InputPage/InputPage';
 import QueryPage from '../QueryPage/QueryPage';
 
@@ -31,6 +32,7 @@ class App extends Component {
       <Router>
         <div>
           <Nav />
+          <topAppBar />
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
@@ -54,8 +56,8 @@ class App extends Component {
             they will see the info page instead. */}
             <ProtectedRoute
               exact
-              path="/info"
-              component={InfoPage}
+              path="/admin"
+              component={AdminPage}
             />
             <ProtectedRoute
               exact
