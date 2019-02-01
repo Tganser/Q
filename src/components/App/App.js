@@ -18,7 +18,7 @@ import UserPage from '../UserPage/UserPage';
 import AdminPage from '../AdminPage/AdminPage';
 import InputPage from '../InputPage/InputPage';
 import QueryPage from '../QueryPage/QueryPage';
-
+import DownloadPage from '../DownloadPage/DownloadPage';
 
 import './App.css';
 
@@ -68,6 +68,11 @@ class App extends Component {
               exact
               path="/query"
               component={QueryPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/download"
+              component={DownloadPage}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

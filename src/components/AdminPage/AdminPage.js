@@ -36,21 +36,23 @@ makeCall = () => {
           <Card className={classes.adminCard}>
             <CardContent>
               Jim Ellison
-              <EditIcon className={classes.adminCard}/>
-              <DeleteIcon className={classes.adminCard}/>
+              <EditIcon className={classes.edit}/>
+              <DeleteIcon className={classes.delete}/>
             </CardContent>
           </Card>
           <Card className={classes.adminCard}>
             <CardContent>
               Alex Wenthe
+              <EditIcon className={classes.edit}/>
+              <DeleteIcon className={classes.delete}/>
             </CardContent>
-            <DeleteIcon />
           </Card>
           <Card className={classes.adminCard}>
             <CardContent>
               Tessa Ganser
+              <EditIcon className={classes.edit}/>
+              <DeleteIcon className={classes.delete}/>
             </CardContent>
-            <DeleteIcon />
           </Card>
        </Paper>
       </div>
@@ -67,9 +69,16 @@ const styles = theme => ({
     padding: 12,
   },
   adminCard: {
-    width: 200,
+    width: 220,
     margin: 12,
     padding: 12,
+  },
+  edit: {
+    padding: 5,
+    marginLeft: 20,
+  },
+  delete: {
+    padding: 5,
   }
 });
 
