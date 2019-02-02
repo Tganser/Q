@@ -10,8 +10,9 @@ import Button from '@material-ui/core/Button';
 // import Select from '@material-ui/core/Select';
 // import InputLabel from '@material-ui/core/InputLabel';
 // import FormControl from '@material-ui/core/FormControl';
-// import MenuItem from '@material-ui/core/MenuItem';
+import MenuItem from '@material-ui/core/MenuItem';
 import Divider from '@material-ui/core/Divider';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -102,7 +103,7 @@ class InputPage extends React.Component {
 
        <Paper className={classes.root} elevation={1}>
         <Typography variant="h5" component="h3">
-          Create a new job site
+          Create a new job
          </Typography>
         <Typography component="p">
           Other description here about submitting this data
@@ -114,20 +115,38 @@ class InputPage extends React.Component {
             className={classes.textField}
             margin="normal"
          />
-      {/* <InputLabel htmlFor="age-simple">Client Organization</InputLabel> */}
-      {/* <Select
-        inputProps={{
-          name: 'age',
-          id: 'age-simple',
-        }}
-      >
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
-        <MenuItem value={10}>Org 1</MenuItem>
-        <MenuItem value={20}>Org 2</MenuItem>
-        <MenuItem value={30}>Org 3</MenuItem>
-      </Select> */}
+        <TextField
+          select
+          label="Client Organization"
+          className={classes.textField}
+          InputProps={{
+            startAdornment: <InputAdornment position="start"></InputAdornment>,
+          }}
+        >
+            <MenuItem>
+              Client 1
+            </MenuItem>
+            <MenuItem>
+              Client 2
+            </MenuItem>
+          ))}
+        </TextField>
+         <TextField
+           select
+           label="Client Contact"
+           className={classes.textField}
+           InputProps={{
+             startAdornment: <InputAdornment position="start"></InputAdornment>,
+           }}
+         >
+             <MenuItem>
+               Contact Person 1
+             </MenuItem>
+             <MenuItem>
+               Contact Person 2
+             </MenuItem>
+           ))}
+         </TextField>
          <TextField
             id="standard-with-placeholder"
             label="Site"
@@ -211,7 +230,64 @@ class InputPage extends React.Component {
 
       <Paper className={classes.root} elevation={1}>
        <Typography variant="h5" component="h3">
+         Create a new site
+        </Typography>
+       <Typography component="p">
+         Other description here about submitting this data
+        </Typography>
+        <TextField
+           id="standard-with-placeholder"
+           label="Site Name"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <TextField
+          multiline
+          rowsMax="4"
+           id="standard-with-placeholder"
+           label="Owner Organization"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <TextField
+           id="standard-with-placeholder"
+           label="Owner Contact"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <TextField
+           id="standard-with-placeholder"
+           label="Street Address"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <TextField
+           id="standard-with-placeholder"
+           label="Township, range, section"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <TextField
+           id="standard-with-placeholder"
+           label="link to location map"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+
+        <Button type="submit" variant="contained" className={classes.button}>Save</Button>
+
+     </Paper>
+
+      <Paper className={classes.root} elevation={1}>
+       <Typography variant="h5" component="h3">
          Create a new management unit
+        
         </Typography>
        <Typography component="p">
          Other description here about submitting this data
