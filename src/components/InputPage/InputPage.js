@@ -6,11 +6,13 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import MenuItem from '@material-ui/core/MenuItem';
+// import Card from '@material-ui/core/Card';
+// import Select from '@material-ui/core/Select';
+// import InputLabel from '@material-ui/core/InputLabel';
+// import FormControl from '@material-ui/core/FormControl';
+// import MenuItem from '@material-ui/core/MenuItem';
+import Divider from '@material-ui/core/Divider';
+
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
 // It doesn't dispatch any redux actions or display any part of redux state
@@ -20,7 +22,7 @@ class InputPage extends React.Component {
   render = () => {
     const { classes } = this.props;
     return (
-      <div>
+      <div className={classes.background}>
         <Paper className={classes.root} elevation={1}>
          <Typography variant="h5" component="h3">
            Create a new client organization
@@ -28,8 +30,8 @@ class InputPage extends React.Component {
          <Typography component="p">
            Other description here about submitting this data
           </Typography>
-          <div className={classes.subArea}>
-          <div className={classes.inputArea}>
+          {/* <div className={classes.subArea}> */}
+          {/* <div className={classes.inputArea}> */}
           <TextField
              id="standard-with-placeholder"
              label="Full Name"
@@ -56,9 +58,12 @@ class InputPage extends React.Component {
                 }
                 label="Potential"
               />
-            </div>
-              <Card className={classes.contactCard}>
-              <Typography variant="h7">Client Contact: </Typography>
+            {/* </div> */}
+              {/* <Card className={classes.contactCard}> */}
+              <Button type="submit" variant="contained" className={classes.button}>Save</Button>
+
+              <Divider className={classes.divider}/>
+              <Typography variant="h7">Create new client contact: </Typography>
               <TextField
                  id="standard-with-placeholder"
                  label="Name"
@@ -90,10 +95,9 @@ class InputPage extends React.Component {
                  margin="normal"
                  width="20%"
               />
-              <Button type="submit" variant="outlined" className={classes.button}>Add</Button>
-            </Card>
-          </div>
-              <Button type="submit" variant="outlined" className={classes.button}>Save</Button>
+              <Button type="submit" variant="contained"className={classes.button}>Add</Button>
+            {/* </Card> */}
+          {/* </div> */}
        </Paper>
 
        <Paper className={classes.root} elevation={1}>
@@ -201,7 +205,7 @@ class InputPage extends React.Component {
             className={classes.textField}
             margin="normal"
          />
-         <Button type="submit" variant="outlined" className={classes.button}>Save</Button>
+         <Button type="submit" variant="contained" className={classes.button}>Save</Button>
 
       </Paper>
 
@@ -214,11 +218,57 @@ class InputPage extends React.Component {
         </Typography>
         <TextField
            id="standard-with-placeholder"
-           label="With placeholder"
-           placeholder="Placeholder"
+           label="Unit Designation"
+           placeholder=""
            className={classes.textField}
            margin="normal"
         />
+        <TextField
+          multiline
+          rowsMax="4"
+           id="standard-with-placeholder"
+           label="Description"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <TextField
+           id="standard-with-placeholder"
+           label="Link to Unit Map"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <TextField
+           id="standard-with-placeholder"
+           label="Acres"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <TextField
+           id="standard-with-placeholder"
+           label="Burn Perimeter"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <TextField
+           id="standard-with-placeholder"
+           label="Firebreak"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <TextField
+           id="standard-with-placeholder"
+           label="Fenceline"
+           placeholder=""
+           className={classes.textField}
+           margin="normal"
+        />
+        <Button type="submit" variant="contained" className={classes.button}>Save</Button>
+
      </Paper>
 
      <Paper className={classes.root} elevation={1}>
@@ -230,11 +280,13 @@ class InputPage extends React.Component {
        </Typography>
        <TextField
           id="standard-with-placeholder"
-          label="With placeholder"
-          placeholder="Placeholder"
+          label="Name"
+          placeholder=""
           className={classes.textField}
           margin="normal"
        />
+       <Button type="submit" variant="contained" className={classes.button}>Save</Button>
+
     </Paper>
 
     <Paper className={classes.root} elevation={1}>
@@ -246,11 +298,27 @@ class InputPage extends React.Component {
       </Typography>
       <TextField
          id="standard-with-placeholder"
-         label="With placeholder"
-         placeholder="Placeholder"
+         label="Task Name"
+         placeholder=""
          className={classes.textField}
          margin="normal"
       />
+      <TextField
+         id="standard-with-placeholder"
+         label="Activity"
+         placeholder=""
+         className={classes.textField}
+         margin="normal"
+      />
+      <TextField
+         id="standard-with-placeholder"
+         label="Date"
+         placeholder=""
+         className={classes.textField}
+         margin="normal"
+      />
+      <Button type="submit" variant="contained" className={classes.button}>Save</Button>
+
    </Paper>
 
       </div>
@@ -287,8 +355,15 @@ const styles = theme => ({
   },
   formControl: {
     minWidth: 200,
-
   },
+  divider: {
+    margin: theme.spacing.unit * 2,
+  },
+  background :{
+    backgroundColor: '#ededed',
+    padding: 0,
+    margin: 0,
+  }
 });
 
 export default withStyles(styles)(InputPage);
